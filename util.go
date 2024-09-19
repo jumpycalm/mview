@@ -89,14 +89,14 @@ func init() {
 	runewidth.CreateLUT() // Create lookup table
 
 	// Initialize the predefined input field handlers.
-	InputFieldInteger = func(text string, ch rune) bool {
+	InputFieldInteger = func(text string, _ rune) bool {
 		if text == "-" {
 			return true
 		}
 		_, err := strconv.Atoi(text)
 		return err == nil
 	}
-	InputFieldFloat = func(text string, ch rune) bool {
+	InputFieldFloat = func(text string, _ rune) bool {
 		if text == "-" || text == "." || text == "-." {
 			return true
 		}
@@ -637,8 +637,8 @@ func WordWrap(text string, width int) (lines []string) {
 // recognized and substituted by the print functions of this package. For
 // example, to include a tag-like string in a box title or in a TextView:
 //
-//   box.SetTitle(mview.Escape("[squarebrackets]"))
-//   fmt.Fprint(textView, mview.EscapeBytes(`["quoted"]`))
+//	box.SetTitle(mview.Escape("[squarebrackets]"))
+//	fmt.Fprint(textView, mview.EscapeBytes(`["quoted"]`))
 func EscapeBytes(text []byte) []byte {
 	return nonEscapePattern.ReplaceAll(text, []byte("$1[]"))
 }
@@ -647,8 +647,8 @@ func EscapeBytes(text []byte) []byte {
 // recognized and substituted by the print functions of this package. For
 // example, to include a tag-like string in a box title or in a TextView:
 //
-//   box.SetTitle(mview.Escape("[squarebrackets]"))
-//   fmt.Fprint(textView, mview.Escape(`["quoted"]`))
+//	box.SetTitle(mview.Escape("[squarebrackets]"))
+//	fmt.Fprint(textView, mview.Escape(`["quoted"]`))
 func Escape(text string) string {
 	return nonEscapePattern.ReplaceAllString(text, "$1[]")
 }

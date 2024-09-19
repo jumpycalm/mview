@@ -293,9 +293,6 @@ type Table struct {
 	// The cells of the table. Rows first, then columns.
 	cells [][]*TableCell
 
-	// header
-	header []string
-
 	// The rightmost column in the data set.
 	lastColumn int
 

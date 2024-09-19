@@ -381,9 +381,6 @@ func (p *Panels) MouseHandler() func(action MouseAction, event *tcell.EventMouse
 	})
 }
 
-// Support backwards compatibility with Pages.
-type page = panel
-
 // Pages is a wrapper around Panels.
 //
 // Deprecated: This type is provided for backwards compatibility.
