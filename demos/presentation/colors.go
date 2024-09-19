@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 const colorsText = `You can use color tags almost everywhere to partially change the color of a string.

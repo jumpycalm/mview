@@ -1,6 +1,6 @@
 package main
 
-import "github.com/blacknon/mview"
+import "github.com/jumpycalm/mview"
 
 // Introduction returns a mview.List with the highlights of the mview package.
 func Introduction(nextSlide func()) (title string, info string, content mview.Primitive) {

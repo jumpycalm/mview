@@ -1,7 +1,7 @@
 /*
 A presentation of the mview package, implemented with mview.
 
-Navigation
+# Navigation
 
 The presentation will advance to the next slide when the primitive demonstrated
 in the current slide is left (usually by hitting Enter or Escape). Additionally,
@@ -20,8 +20,8 @@ import (
 	_ "net/http/pprof"
 	"strconv"
 
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 const (

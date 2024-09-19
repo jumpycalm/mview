@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/blacknon/mview"
+	"github.com/jumpycalm/mview"
 )
 
 func main() {

@@ -2,5 +2,6 @@
 dist/
 tmp/
 vendor/
+.vscode
 *.sh
 cview.test

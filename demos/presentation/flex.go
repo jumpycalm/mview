@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 func demoBox(title string) *mview.Box {

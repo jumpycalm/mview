@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 type company struct {

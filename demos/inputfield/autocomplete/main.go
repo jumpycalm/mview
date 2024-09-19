@@ -3,8 +3,8 @@ package main
 import (
 	"strings"
 
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 // 1,000 most common English words.

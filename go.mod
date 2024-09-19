@@ -1,4 +1,4 @@
-module github.com/blacknon/mview
+module github.com/jumpycalm/mview
 
 go 1.12
 

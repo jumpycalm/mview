@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/blacknon/mview"
+	"github.com/jumpycalm/mview"
 )
 
 // The width of the code window.

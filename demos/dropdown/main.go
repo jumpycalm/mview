@@ -1,7 +1,7 @@
 // Demo code for the DropDown primitive.
 package main
 
-import "github.com/blacknon/mview"
+import "github.com/jumpycalm/mview"
 
 func main() {
 	app := mview.NewApplication()

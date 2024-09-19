@@ -2,7 +2,7 @@
 package main
 
 import (
-	"github.com/blacknon/mview"
+	"github.com/jumpycalm/mview"
 )
 
 func demoBox(title string) *mview.Box {

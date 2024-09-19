@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/blacknon/mview"
+	"github.com/jumpycalm/mview"
 )
 
 const form = `[green]package[white] main
 
 [green]import[white] (
-    [red]"github.com/blacknon/mview"[white]
+    [red]"github.com/jumpycalm/mview"[white]
 )
 
 [green]func[white] [yellow]main[white]() {

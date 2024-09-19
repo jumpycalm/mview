@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/blacknon/mview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/jumpycalm/mview"
 )
 
 const inputField = `[green]package[white] main
@@ -11,7 +11,7 @@ const inputField = `[green]package[white] main
     [red]"strconv"[white]
 
     [red]"github.com/gdamore/tcell/v2"[white]
-    [red]"github.com/blacknon/mview"[white]
+    [red]"github.com/jumpycalm/mview"[white]
 )
 
 [green]func[white] [yellow]main[white]() {
