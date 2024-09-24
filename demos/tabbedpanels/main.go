@@ -2,12 +2,8 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/jumpycalm/mview"
 )
-
-const panelCount = 5
 
 func main() {
 	app := mview.NewApplication()
@@ -15,27 +11,38 @@ func main() {
 
 	app.EnableMouse(true)
 
-	panels := mview.NewTabbedPanels()
-	for panel := 0; panel < panelCount; panel++ {
-		func(panel int) {
-			form := mview.NewForm()
-			form.SetBorder(true)
-			form.SetTitle(fmt.Sprintf("This is tab %d. Choose another tab.", panel+1))
-			form.AddButton("Next", func() {
-				panels.SetCurrentTab(fmt.Sprintf("panel-%d", (panel+1)%panelCount))
-			})
-			form.AddButton("Quit", func() {
-				app.Stop()
-			})
-			form.SetCancelFunc(func() {
-				app.Stop()
-			})
+	tp := mview.NewTabbedPanels()
 
-			panels.AddTab(fmt.Sprintf("panel-%d", panel), fmt.Sprintf("Panel #%d", panel), form)
-		}(panel)
-	}
+	// Tab 1 has a textview
+	tv := mview.NewTextView()
+	tv.SetBorder(true)
+	tv.SetTitle("TextView title")
+	tv.SetText("TextView text")
+	tp.AddTab("tab1", "Tab TextView", tv)
 
-	app.SetRoot(panels, true)
+	// Tab 2 has a form
+	fm := mview.NewForm()
+	fm.SetBorder(true)
+	fm.SetTitle("This is the form from the 2nd tab")
+	fm.AddInputField("Input", "", 30, nil, nil)
+	fm.AddButton("Enter", func() {
+		// Don't handle enter
+	})
+	fm.AddButton("Quit", func() {
+		app.Stop()
+	})
+	fm.SetCancelFunc(func() {
+		app.Stop()
+	})
+	tp.AddTab("tab2", "Tab Form", fm)
+
+	// Tab 3 has a stacked tabs
+	tp3 := mview.NewTabbedPanels()
+	tp3.AddTab("tab1", "Tab TextView", tv)
+	tp3.AddTab("tab2", "Tab Form", fm)
+	tp.AddTab("tab3", "Tab stacked", tp3)
+
+	app.SetRoot(tp, true)
 	if err := app.Run(); err != nil {
 		panic(err)
 	}
