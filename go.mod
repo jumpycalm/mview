@@ -1,6 +1,6 @@
 module github.com/jumpycalm/mview
 
-go 1.23
+go 1.25
 
 require (
 	code.rocketnine.space/tslocum/cbind v0.1.5
