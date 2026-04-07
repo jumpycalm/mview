@@ -338,6 +338,9 @@ func (i *InputField) SetFieldNoteTextColor(color tcell.Color) {
 func (i *InputField) SetFieldNote(note string) {
 	i.Lock()
 	defer i.Unlock()
+	if i.changed != nil {
+		defer i.changed(note)
+	}
 
 	i.fieldNote = []byte(note)
 }
@@ -346,6 +349,9 @@ func (i *InputField) SetFieldNote(note string) {
 func (i *InputField) ResetFieldNote() {
 	i.Lock()
 	defer i.Unlock()
+	if i.changed != nil {
+		defer i.changed("")
+	}
 
 	i.fieldNote = nil
 }
